@@ -13,7 +13,23 @@
 		382C1CD01F300639000147FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382C1CCF1F300639000147FB /* Assets.xcassets */; };
 		382C1CD31F300639000147FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382C1CD11F300639000147FB /* LaunchScreen.storyboard */; };
 		382C1CDB1F300A53000147FB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 382C1CDA1F300A53000147FB /* Cartfile */; };
+		3871BEF71F32C43E005BEEB9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */; };
+		3871BEF81F32C43E005BEEB9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3871BEF91F32C43E005BEEB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3871BEF81F32C43E005BEEB9 /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		382C1CC51F300639000147FB /* Web Service Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Web Service Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,9 @@
 		382C1CD21F300639000147FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382C1CD41F300639000147FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382C1CDA1F300A53000147FB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3871BEF01F329D45005BEEB9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Web Service Example/Carthage/Build/iOS/AFNetworking.framework"; sourceTree = "<group>"; };
+		3871BEF21F32A119005BEEB9 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Web Service Example/Carthage/Build/iOS/AFNetworking.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3871BEF71F32C43E005BEEB9 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +60,11 @@
 		382C1CBC1F300639000147FB = {
 			isa = PBXGroup;
 			children = (
+				3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */,
+				3871BEF21F32A119005BEEB9 /* bridge.h */,
 				382C1CC71F300639000147FB /* Web Service Example */,
 				382C1CC61F300639000147FB /* Products */,
+				3871BEEF1F329D45005BEEB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +90,14 @@
 			path = "Web Service Example";
 			sourceTree = "<group>";
 		};
+		3871BEEF1F329D45005BEEB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3871BEF01F329D45005BEEB9 /* AFNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +108,7 @@
 				382C1CC11F300639000147FB /* Sources */,
 				382C1CC21F300639000147FB /* Frameworks */,
 				382C1CC31F300639000147FB /* Resources */,
+				3871BEF91F32C43E005BEEB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,8 +224,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -213,6 +247,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -243,8 +278,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -256,6 +293,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -266,10 +304,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Web Service Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aanyajhaveri.Web-Service-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -278,10 +325,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Web Service Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aanyajhaveri.Web-Service-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -305,6 +361,7 @@
 				382C1CD91F300639000147FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

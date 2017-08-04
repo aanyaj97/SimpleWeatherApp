@@ -15,3 +15,6 @@
 #import "AFNetworking/AFNetworking.h"
 
 #import "AFNetworking/AFHTTPSessionManager.h"
+#import "SwiftyJSON/SwiftyJSON-Swift.h"
+
+#import "SwiftyJSON/SwiftyJSON.h"

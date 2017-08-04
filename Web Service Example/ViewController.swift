@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -20,11 +21,12 @@ class ViewController: UIViewController {
                     parameters: nil,
                     progress: nil,
                     success: {(operation: URLSessionDataTask, responseObject: Any?) in
-                        if let responseObject = responseObject {
-                            print("Response: " + (responseObject as AnyObject).description)
+                        let json = JSON(responseObject)
+                        if let forecast = json["list"][0]["weather"][0]["description"].string {
+                            self.forecastLabel.text = forecast
                         }
-        }) {(operation:URLSessionDataTask?, error: Error) in
-            print("Error: " + error.localizedDescription)
+        })      { (operation:URLSessionDataTask?, error:Error) in
+                        print("Error: " + error.localizedDescription)
         }
     }
 

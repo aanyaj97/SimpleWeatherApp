@@ -15,6 +15,9 @@
 		382C1CDB1F300A53000147FB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 382C1CDA1F300A53000147FB /* Cartfile */; };
 		3871BEF71F32C43E005BEEB9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */; };
 		3871BEF81F32C43E005BEEB9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38E8965F1F3419CB00E65019 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E8965E1F3419CB00E65019 /* SwiftyJSON.framework */; };
+		38E896601F3419CB00E65019 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38E8965E1F3419CB00E65019 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38E896621F341C1500E65019 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E896611F341C1500E65019 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				38E896601F3419CB00E65019 /* SwiftyJSON.framework in Embed Frameworks */,
 				3871BEF81F32C43E005BEEB9 /* AFNetworking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -43,6 +47,8 @@
 		3871BEF01F329D45005BEEB9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Web Service Example/Carthage/Build/iOS/AFNetworking.framework"; sourceTree = "<group>"; };
 		3871BEF21F32A119005BEEB9 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
 		3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Web Service Example/Carthage/Build/iOS/AFNetworking.framework"; sourceTree = "<group>"; };
+		38E8965E1F3419CB00E65019 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Web Service Example/Carthage/Build/iOS/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		38E896611F341C1500E65019 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E8965F1F3419CB00E65019 /* SwiftyJSON.framework in Frameworks */,
 				3871BEF71F32C43E005BEEB9 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +67,7 @@
 		382C1CBC1F300639000147FB = {
 			isa = PBXGroup;
 			children = (
+				38E8965E1F3419CB00E65019 /* SwiftyJSON.framework */,
 				3871BEF61F32C43E005BEEB9 /* AFNetworking.framework */,
 				3871BEF21F32A119005BEEB9 /* bridge.h */,
 				382C1CC71F300639000147FB /* Web Service Example */,
@@ -79,6 +87,7 @@
 		382C1CC71F300639000147FB /* Web Service Example */ = {
 			isa = PBXGroup;
 			children = (
+				38E896611F341C1500E65019 /* SwiftyJSON.swift */,
 				382C1CC81F300639000147FB /* AppDelegate.swift */,
 				382C1CCA1F300639000147FB /* ViewController.swift */,
 				382C1CCC1F300639000147FB /* Main.storyboard */,
@@ -172,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E896621F341C1500E65019 /* SwiftyJSON.swift in Sources */,
 				382C1CCB1F300639000147FB /* ViewController.swift in Sources */,
 				382C1CC91F300639000147FB /* AppDelegate.swift in Sources */,
 			);
@@ -311,6 +321,7 @@
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Web Service Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -328,6 +339,7 @@
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Web\\ Service\\ Example/Carthage/Build/iOS",
